@@ -1,10 +1,14 @@
 //background for hompage content
-.myContent {
-	background: $dark;
-}
+//.myContent {
+//	background: $dark;
+//}
 
-//Remove border from header
+Remove border from header
 .bar-dark {
 	border: none;
 }
 
+//border for text inputs on add page
+.myBorder {
+	border: 2px solid black;
+}

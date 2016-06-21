@@ -35,21 +35,46 @@
 
       <!-- home.html -->
       <script type="text/ng-template" id = "home.html">
-        <ion-view view-titel="Receptbank">
+        <ion-view view-title="Receptbank">
           <ion-content class="myContent" >
             <div class="row">
               <div class="col"><img src="img/TableOfFood.jpg" class="full-image"></div>
             </div>
             <div class="row">
-              <div class="col"><a class="button button-full button-outline" ui-sref="recList"><p class>Se Recept</p></a></div>
+              <div class="col"><a class="button button-full button-light" ui-sref="recList"><p class>Se Recept</p></a></div>
             </div>
-            <div class="col"><a class="button button-full button-outline" ui-sref="edit"><p class>Ändra Recept</p></a></div>
+            <div class="col"><a class="button button-full button-light" ui-sref="edit"><p class>Ändra Recept</p></a></div>
             </div>
-            <div class="col"><a class="button button-full button-outline" ui-sref="add"><p class>Lägg till Recept</p></a></div>
+            <div class="col"><a class="button button-full button-light" ui-sref="add"><p class>Lägg till Recept</p></a></div>
             </div>
-            <div class="col"><a class="button button-full button-outline" ui-sref="delete"><p class>Ta bort Recept</p></a></div>
+            <div class="col"><a class="button button-full button-light" ui-sref="delete"><p class>Ta bort Recept</p></a></div>
             </div>
 
+          </ion-content>
+        </ion-view>
+      </script>
+
+      <!--add.html-->
+      <script type="text/ng-template" id = "add.html">
+        <ion-view view-title="Lägg till Recept">
+          <ion-content>
+            <div class="list list-inset" ng-controller="addController">
+              <label class="item item-input item-stacked-label myBorder">
+                <span class="input-label">Receptnamn</span>
+                <input type="text" ng-model="recName">
+              </label>
+              <label class="item item-input item-stacked-label myBorder">
+                <span class="input-label">Ingredienser</span>
+                <textarea rows="10" cols="10" ng-model="recIngredients"></textarea>
+              </label>
+              <label class="item item-input item-stacked-label myBorder">
+                <span class="input-label">Tillagning</span>
+                <textarea rows="10" cols="10" ng-model="recDirections"></textarea>
+              </label>
+              <div class="item button-block button-positive" ng-model="addButton" ng-disabled="!recName||!recIngredients||!recDirections" ng-click="submitRecipe()">Lägg till Recept
+              </div>
+            </div>
+          
           </ion-content>
         </ion-view>
       </script>

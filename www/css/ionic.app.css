@@ -9815,8 +9815,8 @@ a.button {
   -webkit-transition-duration: 0s;
   transition-duration: 0s; }
 
-.myContent {
-  background: #444; }
-
-.bar-dark {
+Remove border from header .bar-dark {
   border: none; }
+
+.myBorder {
+  border: 2px solid black; }
