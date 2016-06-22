@@ -115,6 +115,62 @@
           </ion-content>
         </ion-view>
       </script>
+
+       <!-- delete Recipe -->
+      <script type="text/ng-template" id = "deleteRec.html">
+        <ion-view view-title="Ta bort Recept">
+          <ion-content class="myContent">
+            <div ng-controller="deleteController">
+              <ion-list>
+                <ion-item ng-repeat="rec in recs">
+                <div class="item button button-block button-positive" ng-model="delButton" ng-click="showDetails(rec.$id)">Ta bort {{rec.recipeName}}
+                </div>
+              </ion-item>
+            </ion-list>
+          </div>
+        </ion-content>
+      </ion-view>
+    </script>
+
+    <!-- edit Recipe -->
+    <script type="text/ng-template" id = "edit.html">
+        <ion-view view-title="Välj Recept att ändra">
+          <ion-content>
+            <ion-list ng-controller="editController">
+              <ion-item ng-repeat="edit in editRecipes" class = "recListing">
+              <a ui-sref="one({id:edit.$id})" nav-direction="enter"><h2>Ändra {{edit.recipeName}}</h2></a>
+              </ion-item>
+            </ion-list>
+          </ion-content>
+        </ion-view>
+      </script>
+
+      <!--Edit One-->
+      <script type="text/ng-template" id = "editOne.html">
+        <ion-view view-title="Ändra Recept">
+          <ion-content>
+            <div class="list list-inset" ng-controller="editController">
+              <label class="item item-input item-stacked-label myBorder">
+                <span class="input-label">Receptnamn</span>
+                <input type="text" ng-model="title">
+              </label>
+              <label class="item item-input item-stacked-label myBorder">
+                <span class="input-label">Ingredienser</span>
+                <textarea rows="10" cols="10" ng-model="ingredients"></textarea>
+              </label>
+              <label class="item item-input item-stacked-label myBorder">
+                <span class="input-label">Tillagning</span>
+                <textarea rows="10" cols="10" ng-model="directions"></textarea>
+              </label>
+              <div class="item button button-block button-positive" ng-model="editButton" ng-disabled="!title||!ingredients||!directions" ng-click="updateRecipe(myid)">Spara ändringar till Recept
+              </div>
+            </div>
+          
+          </ion-content>
+        </ion-view>
+      </script>
+
+
     
   </body>
 </html>
