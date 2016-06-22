@@ -9820,3 +9820,11 @@ Remove border from header .bar-dark {
 
 .myBorder {
   border: 2px solid black; }
+
+.recListing {
+  text-align: center; }
+  .recListing a {
+    text-decoration: none; }
+
+.item {
+  white-space: normal; }

@@ -3,9 +3,9 @@
 // angular.module is a global place for creating, registering and retrieving Angular modules
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
-var myRecipe = angular.module('myRecipe', ['ionic', 'firebase']);
+angular.module('myRecipe', ['ionic', 'firebase', 'recipeService'])
 
-myRecipe.run(function($ionicPlatform) {
+.run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
     if(window.cordova && window.cordova.plugins.Keyboard) {
       // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
@@ -21,44 +21,52 @@ myRecipe.run(function($ionicPlatform) {
       StatusBar.styleDefault();
     }
   });
-});
+})
 
-myRecipe.config(function($stateProvider,$urlRouterProvider) {
+.config(function($stateProvider,$urlRouterProvider) {
   
-  $stateProvider.state("home", {
+  $stateProvider
+  
+  .state("home", {
     url: "/",
     templateUrl: "home.html"
-  });
-  $stateProvider.state("recList", {
+  })
+
+  .state("recList", {
     url: "/recList",
     templateUrl: "recList.html",
     controller: "listController"
-  });
-  $stateProvider.state("singleRecipe", {
+  })
+
+ .state("singleRecipe", {
     url: "/:id",
     templateUrl: "singleRec.html",
     controller: "recipeController"
-  });
-  $stateProvider.state("add", {
+  })
+
+  .state("add", {
     url: "/add",
     templateUrl: "add.html",
     controller: "addController"
-  });
-  $stateProvider.state("delete", {
+  })
+
+.state("delete", {
     url: "/delete",
     templateUrl: "delete.html",
     controller: "deleteController"
-  });
-  $stateProvider.state("edit", {
+  })
+
+  .state("edit", {
     url: "/edit",
     templateUrl: "edit.html",
     controller: "recipeEditController"
-  });
-  $stateProvider.state("one", {
+  })
+
+  .state("one", {
     url: "/edit/:id",
     templateUrl: "editOne.html",
     controller: "recipeEditController"
-  });
+  })
 
   $urlRouterProvider.otherwise("/");
   

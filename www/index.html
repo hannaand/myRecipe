@@ -16,8 +16,9 @@
     <script src="cordova.js"></script>
 
     <!-- Firebase & Angularfire -->
-    <script type="text/javascript" src="lib/firebase/firebase.js"></script>
-    <script type="text/javascript" src="lib/angularfire/dist/angularfire.min.js"></script>
+    <script src="https://cdn.firebase.com/js/client/2.2.4/firebase.js"></script>
+    <script src="https://cdn.firebase.com/libs/angularfire/1.2.0/angularfire.min.js"></script>
+
 
     <!-- your app's js -->
     <script src="js/app.js"></script>
@@ -71,10 +72,46 @@
                 <span class="input-label">Tillagning</span>
                 <textarea rows="10" cols="10" ng-model="recDirections"></textarea>
               </label>
-              <div class="item button-block button-positive" ng-model="addButton" ng-disabled="!recName||!recIngredients||!recDirections" ng-click="submitRecipe()">Lägg till Recept
+              <div class="item button button-block button-positive" ng-model="addButton" ng-disabled="!recName||!recIngredients||!recDirections" ng-click="submitRecipe()">Lägg till Recept
               </div>
             </div>
           
+          </ion-content>
+        </ion-view>
+      </script>
+
+      <!-- recipe list -->
+      <script type="text/ng-template" id = "recList.html">
+        <ion-view view-title="Välj Recept">
+          <ion-content>
+            <ion-list ng-controller="listController">
+              <ion-item ng-repeat="recipe in recipes" class ="recListing">
+                <a ui-sref="singleRecipe({id:recipe.$id})" nav-direction="enter"><h2>{{recipe.recipeName}}</h2></a>
+              </ion-item>
+            </ion-list>
+          </ion-content>
+        </ion-view>
+      </script>
+
+      <!-- single recipe -->
+      <script type="text/ng-template" id = "singleRec.html">
+        <ion-view view-title="Recept">
+          <ion-content>
+            <div ng-controller="recipeController">
+              <h4>{{single.Recipe.recipeName}}</h4>
+              <h4>Ingredienser:</h4>
+              <ion-list type="inset-list">
+                <ion-item ng-repeat="ing in ingList">
+                {{ing}}
+                </ion-item>
+              </ion-list>
+              <h4>Tillagning:</h4>
+              <ion-list type="inset-list">
+                <ion-item ng-repeat="prep in prepList">
+                {{prep}}
+                </ion-item>
+              </ion-list>
+            </div>
           </ion-content>
         </ion-view>
       </script>
