@@ -59,7 +59,7 @@ angular.module('myRecipe', ['ionic', 'firebase', 'recipeService'])
   .state("edit", {
     url: "/edit",
     templateUrl: "edit.html",
-    controller: "recipeEditController"
+    controller: "editController"
   })
 
   .state("one", {

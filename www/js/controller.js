@@ -28,10 +28,10 @@ angular.module('myRecipe')
 
 	$scope.showDetails = function(id) {
 		$ionicActionSheet.show({
-			destruktiveText: 'Delete',
-			titleText: 'Sure you want to delete?',
-			cancelText: 'Cancel',
-			destruktiveButtonClicked: function(){
+			destructiveText: 'Ta bort',
+			titleText: 'Är du säker på att du vill ta bort receptet?',
+			cancelText: 'Avsluta',
+			destructiveButtonClicked: function(){
 				var rem = $scope.recs.$getRecord(id);
 				$scope.recs.$remove(rem);
 				return true;
@@ -40,7 +40,12 @@ angular.module('myRecipe')
 	};
 })
 
-.controller('editController', function($scope, recipeService, $stateParams, $state){
+.controller('editController', function($scope, recipeService){
+	$scope.editRecipes = recipeService.all;
+	
+})
+
+.controller('recipeEditController', function($scope,recipeService, $stateParams, $state){
 	$scope.allRecs = recipeService.all;
 	$scope.singleRecipe = recipeService.get($stateParams.id);
 	$scope.title = $scope.singleRecipe.recipeName;
@@ -50,9 +55,9 @@ angular.module('myRecipe')
 	$scope.updateRecipe = function(id) {
 		var ed = $scope.allRecs.$getRecord(id);
 		ed.recipeName = $scope.title;
-		ed.recipeIngredients = $scope.Ingredients;
-		ed. recipeDirections = $scope.Directions;
+		ed.recipeIngredients = $scope.ingredients;
+		ed. recipeDirections = $scope.directions;
 		$scope.allRecs.$save(ed);
 		$state.go('edit');
 	};
-})
+});

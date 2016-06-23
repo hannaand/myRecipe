@@ -50,7 +50,6 @@
             </div>
             <div class="col"><a class="button button-full button-light" ui-sref="delete"><p class>Ta bort Recept</p></a></div>
             </div>
-
           </ion-content>
         </ion-view>
       </script>
@@ -117,7 +116,7 @@
       </script>
 
        <!-- delete Recipe -->
-      <script type="text/ng-template" id = "deleteRec.html">
+      <script type="text/ng-template" id = "delete.html">
         <ion-view view-title="Ta bort Recept">
           <ion-content class="myContent">
             <div ng-controller="deleteController">
@@ -149,7 +148,7 @@
       <script type="text/ng-template" id = "editOne.html">
         <ion-view view-title="Ändra Recept">
           <ion-content>
-            <div class="list list-inset" ng-controller="editController">
+            <div class="list list-inset" ng-controller="recipeEditController">
               <label class="item item-input item-stacked-label myBorder">
                 <span class="input-label">Receptnamn</span>
                 <input type="text" ng-model="title">
@@ -164,8 +163,7 @@
               </label>
               <div class="item button button-block button-positive" ng-model="editButton" ng-disabled="!title||!ingredients||!directions" ng-click="updateRecipe(myid)">Spara ändringar till Recept
               </div>
-            </div>
-          
+            </div>    
           </ion-content>
         </ion-view>
       </script>
