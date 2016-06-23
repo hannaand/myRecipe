@@ -1,0 +1,12 @@
+<ion-view view-title="Ta bort Recept">
+  <ion-content class="myContent">
+    <div ng-controller="deleteController">
+      <ion-list>
+        <ion-item ng-repeat="rec in recs">
+          <div class="item button button-block button-positive" ng-model="delButton" ng-click="showDetails(rec.$id)">Ta bort {{rec.recipeName}}
+          </div>
+        </ion-item>
+      </ion-list>
+    </div>
+  </ion-content>
+</ion-view>

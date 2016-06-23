@@ -24,47 +24,46 @@ angular.module('myRecipe', ['ionic', 'firebase', 'recipeService'])
 })
 
 .config(function($stateProvider,$urlRouterProvider) {
-  
   $stateProvider
   
   .state("home", {
     url: "/",
-    templateUrl: "home.html"
+    templateUrl: "templates/home.html"
   })
 
   .state("recList", {
     url: "/recList",
-    templateUrl: "recList.html",
+    templateUrl: "templates/recList.html",
     controller: "listController"
   })
 
  .state("singleRecipe", {
     url: "/:id",
-    templateUrl: "singleRec.html",
+    templateUrl: "templates/singleRec.html",
     controller: "recipeController"
   })
 
   .state("add", {
     url: "/add",
-    templateUrl: "add.html",
+    templateUrl: "templates/add.html",
     controller: "addController"
   })
 
 .state("delete", {
     url: "/delete",
-    templateUrl: "delete.html",
+    templateUrl: "templates/delete.html",
     controller: "deleteController"
   })
 
   .state("edit", {
     url: "/edit",
-    templateUrl: "edit.html",
+    templateUrl: "templates/edit.html",
     controller: "editController"
   })
 
   .state("one", {
     url: "/edit/:id",
-    templateUrl: "editOne.html",
+    templateUrl: "templates/editOne.html",
     controller: "recipeEditController"
   })
 

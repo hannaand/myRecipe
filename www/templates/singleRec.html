@@ -1,0 +1,19 @@
+<ion-view view-title="Recept">
+  <ion-content>
+    <div ng-controller="recipeController">
+      <h4>{{single.Recipe.recipeName}}</h4>
+      <h4>Ingredienser:</h4>
+      <ion-list type="inset-list">
+        <ion-item ng-repeat="ing in ingList">
+        {{ing}}
+        </ion-item>
+      </ion-list>
+      <h4>Tillagning:</h4>
+      <ion-list type="inset-list">
+        <ion-item ng-repeat="prep in prepList">
+        {{prep}}
+        </ion-item>
+      </ion-list>
+    </div>
+  </ion-content>
+</ion-view>
