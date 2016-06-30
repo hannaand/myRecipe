@@ -9815,7 +9815,14 @@ a.button {
   -webkit-transition-duration: 0s;
   transition-duration: 0s; }
 
-Remove border from header .bar-dark {
+html {
+  background: url("img/05-fruit-smoothies-blueberry-flaxseed.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover; }
+
+.bar-dark {
   border: none; }
 
 .myBorder {

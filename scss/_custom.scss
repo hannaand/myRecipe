@@ -1,7 +1,12 @@
-//background for hompage content
-//.myContent {
-//	background: $dark;
-//}
+// Variables
+
+$deepBlue: #032f3e;
+$font-color: #009999;
+
+.row {
+	background: $deepBlue;
+	font: $font-color;
+}
 
 Remove border from header
 .bar-dark {

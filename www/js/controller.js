@@ -15,6 +15,11 @@ angular.module('myRecipe')
 
 .controller('listController', function($scope, recipeService){
 	$scope.recipes = recipeService.all;
+
+	$scope.searchText = '';
+    $scope.setSearchText = function(n) {
+        $scope.searchText = n;
+    }
 })
 
 .controller('recipeController', function($scope, recipeService, $stateParams, $state){

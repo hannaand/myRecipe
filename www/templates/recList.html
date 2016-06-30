@@ -1,7 +1,13 @@
  <ion-view view-title="Välj Recept">
- 	<ion-content>
-    	<ion-list ng-controller="listController">
-        	<ion-item ng-repeat="recipe in recipes" class ="recListing">
+ 	<ion-content ng-controller="listController" class="myContent">
+ 		<div class="list list-inset">
+      		<label class="item item-input">
+        		<i class="icon ion-search placeholder-icon"></i>
+        		<input type="text" ng-model='searchText' placeholder="Sök">
+      		</label>
+    	</div>
+    	<ion-list>
+        	<ion-item ng-repeat="recipe in recipes | filter : searchText" class ="recListing">
             	<a ui-sref="singleRecipe({id:recipe.$id})" nav-direction="enter"><h2>{{recipe.recipeName}}</h2></a>
             </ion-item>
         </ion-list>
