@@ -9815,17 +9815,25 @@ a.button {
   -webkit-transition-duration: 0s;
   transition-duration: 0s; }
 
-html {
-  background: url("img/05-fruit-smoothies-blueberry-flaxseed.jpg") no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover; }
+.myContent {
+  background: #032f3e; }
+  .myContent a {
+    text-align: center;
+    display: block;
+    text-decoration: none;
+    padding: 16px; }
+  .myContent p {
+    color: #f8f9fb;
+    font-size: 18px; }
 
 .bar-dark {
   border: none; }
 
 .myBorder {
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  border-radius: 10px;
   border: 2px solid black; }
 
 .recListing {

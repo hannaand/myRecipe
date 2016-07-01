@@ -1,20 +1,39 @@
 // Variables
 
 $deepBlue: #032f3e;
-$font-color: #009999;
+$font-color: #f8f9fb;
 
-.row {
+.myContent {
 	background: $deepBlue;
-	font: $font-color;
+	a {
+		text-align: center;
+		display: block;
+		text-decoration: none;
+		padding: 16px;
+	}
+	p {
+		color: $font-color;
+		font-size: 18px;
+		
+	}
 }
 
-Remove border from header
+//Remove border from header
 .bar-dark {
 	border: none;
+
+}
+
+@mixin border-radius ($radius){
+	-webkit-border-radius: $radius;
+	-moz-border-radius: $radius;
+	-ms-border-radius: $radius;
+	border-radius: $radius;
 }
 
 //border for text inputs on add page
 .myBorder {
+	@include border-radius(10px)
 	border: 2px solid black;
 }
 
